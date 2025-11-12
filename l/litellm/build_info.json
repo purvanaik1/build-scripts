@@ -2,14 +2,18 @@
     "maintainer": "purvanaik1",
     "package_name": "litellm",
     "github_url": "https://github.com/BerriAI/litellm",
-    "version": "1.79.3",
+    "version": "v1.79.3.rc.1",
     "default_branch": "main",
     "build_script": "",
     "package_dir": "l/litellm",
+    "docker_build": "true",
     "docker_cmd": "docker build -t ${package_name}:${PACKAGE_VERSION} ${dir}",
     "validate_build_script": false,
     "wheel_build": false,
-    "*": {
-        "dir": "1.x.x-python312"
+    "use_non_root_user": "false",
+    "v1.79.*": {
+        "dir": "1.79.x-python312",
+        "base_docker_image": "python:3.12-slim",
+        "base_docker_variant": "python"
     }
 }
